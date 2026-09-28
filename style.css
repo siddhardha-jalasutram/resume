@@ -296,14 +296,14 @@ body {
 .grid-column {
     display: flex;
     flex-direction: column;
-    gap: 1.65rem;
+    gap: 1.45rem;
 }
 
 /* 7. SECTION HEADINGS */
 .resume-section {
     display: flex;
     flex-direction: column;
-    gap: 0.75rem;
+    gap: 0.7rem;
 }
 
 .section-title {
@@ -343,14 +343,14 @@ body {
 .projects-list {
     display: flex;
     flex-direction: column;
-    gap: 1.15rem;
+    gap: 1rem;
 }
 
 .project-card {
     display: flex;
     flex-direction: column;
     gap: 0.45rem;
-    padding: 0.85rem 1rem;
+    padding: 0.8rem 0.95rem;
     border-radius: var(--radius-sm);
     border: 1px solid var(--border-color);
     background-color: var(--bg-card);
@@ -476,13 +476,13 @@ body {
 .skills-categorized {
     display: flex;
     flex-direction: column;
-    gap: 0.8rem;
+    gap: 0.65rem;
 }
 
 .skill-group {
     display: flex;
     flex-direction: column;
-    gap: 0.35rem;
+    gap: 0.3rem;
 }
 
 .skill-category {
@@ -495,16 +495,16 @@ body {
 .skill-tags {
     display: flex;
     flex-wrap: wrap;
-    gap: 0.35rem;
+    gap: 0.32rem;
 }
 
 .skill-tag {
-    font-size: 0.775rem;
+    font-size: 0.76rem;
     font-weight: 500;
     color: var(--text-primary);
     background-color: var(--bg-subtle);
     border: 1px solid var(--border-color);
-    padding: 0.2rem 0.55rem;
+    padding: 0.18rem 0.5rem;
     border-radius: var(--radius-sm);
     line-height: 1.3;
     transition: all var(--transition-fast);
@@ -516,40 +516,81 @@ body {
     color: var(--accent-primary);
 }
 
-/* 12. CERTIFICATIONS */
-.certifications-list {
-    list-style: none;
+/* 12. CERTIFICATIONS & PROFESSIONAL DEVELOPMENT */
+.cert-dev-card {
     display: flex;
     flex-direction: column;
-    gap: 0.75rem;
+    gap: 0.55rem;
+    padding: 0.75rem 0.85rem;
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-left: 3px solid var(--accent-primary);
+    border-radius: var(--radius-sm);
+    box-shadow: var(--shadow-sm);
+    transition: all var(--transition-fast);
 }
 
-.certifications-list li {
-    display: flex;
-    flex-direction: column;
-    gap: 0.1rem;
+.cert-dev-card:hover {
+    border-color: #cbd5e1;
+    border-left-color: var(--accent-hover);
+    box-shadow: var(--shadow-hover);
+}
+
+.cert-dev-desc {
     font-size: 0.825rem;
-    border-left: 2px solid var(--border-color);
-    padding-left: 0.65rem;
-    transition: border-color var(--transition-fast);
+    line-height: 1.55;
+    color: var(--text-secondary);
 }
 
-.certifications-list li:hover {
-    border-left-color: var(--accent-primary);
+.cert-dev-domains {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem;
 }
 
-.cert-name {
+.cert-domain-tag {
+    font-size: 0.725rem;
     font-weight: 600;
-    color: var(--text-primary);
-    line-height: 1.35;
+    color: var(--accent-primary);
+    background-color: var(--bg-accent-light);
+    border: 1px solid var(--accent-border);
+    padding: 0.15rem 0.5rem;
+    border-radius: var(--radius-sm);
+    line-height: 1.3;
+    transition: all var(--transition-fast);
 }
 
-.cert-issuer {
+.cert-domain-tag:hover {
+    background-color: var(--accent-primary);
+    color: #ffffff;
+}
+
+.cert-dev-meta {
+    display: flex;
+    align-items: center;
+    gap: 0.45rem;
+    padding-top: 0.4rem;
+    border-top: 1px dashed var(--border-color);
+}
+
+.cert-pulse-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: var(--accent-primary);
+    box-shadow: 0 0 0 2px var(--accent-glow);
+    flex-shrink: 0;
+}
+
+.cert-meta-label {
+    font-size: 0.725rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
     color: var(--text-muted);
-    font-size: 0.775rem;
 }
 
-/* 13. ACHIEVEMENTS & ACTIVITIES */
+/* 13. ACTIVITIES & INVOLVEMENT */
 .activities-list {
     display: flex;
     flex-direction: column;
@@ -559,7 +600,9 @@ body {
 .activity-item {
     display: flex;
     flex-direction: column;
-    gap: 0.2rem;
+    gap: 0.15rem;
+    padding-left: 0.65rem;
+    border-left: 2px solid var(--accent-border);
 }
 
 .activity-title {
@@ -784,12 +827,12 @@ body {
         padding-top: 0 !important;
     }
 
-    .edu-item, .activity-item, .certifications-list li {
+    .edu-item, .activity-item, .cert-dev-card {
         page-break-inside: avoid !important;
         break-inside: avoid !important;
     }
 
-    .edu-item {
+    .edu-item, .activity-item {
         border-left: 2pt solid #0284c7 !important;
         padding-left: 5pt !important;
     }
@@ -809,26 +852,78 @@ body {
         color: #64748b !important;
     }
 
+    .skills-categorized {
+        gap: 3.5pt !important;
+    }
+
+    .skill-group {
+        gap: 1.5pt !important;
+        page-break-inside: avoid !important;
+        break-inside: avoid !important;
+    }
+
+    .skill-tags {
+        gap: 2pt !important;
+    }
+
     .skill-category {
-        font-size: 8pt !important;
+        font-size: 7.5pt !important;
         color: #0284c7 !important;
     }
 
     .skill-tag {
-        font-size: 8pt !important;
+        font-size: 7.25pt !important;
         background-color: #f1f5f9 !important;
         border-color: #e2e8f0 !important;
         color: #0f172a !important;
-        padding: 0.5pt 3.5pt !important;
+        padding: 0.5pt 3pt !important;
     }
 
-    .cert-name {
-        font-size: 9pt !important;
-        color: #0f172a !important;
+    .cert-dev-card {
+        padding: 3pt 0 !important;
+        border: none !important;
+        border-left: 2pt solid #0284c7 !important;
+        padding-left: 5pt !important;
+        background: transparent !important;
+        box-shadow: none !important;
+        gap: 2.5pt !important;
+        page-break-inside: avoid !important;
+        break-inside: avoid !important;
     }
 
-    .cert-issuer {
-        font-size: 8pt !important;
+    .cert-dev-desc {
+        font-size: 8.5pt !important;
+        line-height: 1.35 !important;
+        color: #334155 !important;
+    }
+
+    .cert-dev-domains {
+        gap: 2pt !important;
+    }
+
+    .cert-domain-tag {
+        font-size: 7.25pt !important;
+        background-color: #f0f9ff !important;
+        border-color: #bae6fd !important;
+        color: #0369a1 !important;
+        padding: 0.5pt 3pt !important;
+    }
+
+    .cert-dev-meta {
+        border-top: none !important;
+        padding-top: 1pt !important;
+        gap: 3pt !important;
+    }
+
+    .cert-pulse-dot {
+        background-color: #0284c7 !important;
+        width: 3.5pt !important;
+        height: 3.5pt !important;
+        box-shadow: none !important;
+    }
+
+    .cert-meta-label {
+        font-size: 7pt !important;
         color: #64748b !important;
     }
 
