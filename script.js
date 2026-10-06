@@ -34,4 +34,25 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
     }
+
+    // View Mode Toggle Handler (Mobile Flow vs. Desktop 2-Column Sheet)
+    const viewToggleBtn = document.getElementById('view-toggle-btn');
+    const viewToggleText = document.getElementById('view-toggle-text');
+    const resumeWrapper = document.querySelector('.resume-wrapper');
+    const desktopBanner = document.getElementById('desktop-view-banner');
+
+    if (viewToggleBtn && resumeWrapper) {
+        viewToggleBtn.addEventListener('click', () => {
+            const isDesktopMode = resumeWrapper.classList.toggle('mode-desktop-sheet');
+            if (isDesktopMode) {
+                if (viewToggleText) viewToggleText.textContent = 'Mobile View';
+                viewToggleBtn.classList.add('active-view');
+                if (desktopBanner) desktopBanner.style.display = 'flex';
+            } else {
+                if (viewToggleText) viewToggleText.textContent = 'Desktop View';
+                viewToggleBtn.classList.remove('active-view');
+                if (desktopBanner) desktopBanner.style.display = 'none';
+            }
+        });
+    }
 });
